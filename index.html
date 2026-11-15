@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>لحبيبتي ♥</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#FBEFE6;--ink:#3B1428;--soft:#7A4A5E;--rose:#C9506F;--gold:#B8862B;--card:#FFF8F2;--line:#EBCFC6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#22091A;--ink:#FBEFE6;--soft:#D9B3C1;--rose:#F08FAB;--gold:#F2C879;--card:#33122A;--line:#5A2646}}
+:root[data-theme="dark"]{--bg:#22091A;--ink:#FBEFE6;--soft:#D9B3C1;--rose:#F08FAB;--gold:#F2C879;--card:#33122A;--line:#5A2646}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Tajawal,"Segoe UI",Tahoma,sans-serif;font-size:18px;line-height:1.9}
+h1,h2,.hand{font-family:"Aref Ruqaa",Georgia,serif;font-weight:700;margin:0}
+section{max-width:640px;margin:0 auto;padding:72px 22px}
+#gate{position:fixed;inset:0;z-index:20;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}
+#gate.off{display:none}
+#gate h1{font-size:44px;color:var(--rose)}
+#gate p{color:var(--soft);max-width:320px;margin:10px 0 22px}
+input{font:inherit;text-align:center;direction:ltr;width:220px;padding:12px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink)}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn{display:inline-block;font:inherit;font-weight:700;margin-top:14px;padding:12px 30px;border-radius:999px;border:0;background:var(--rose);color:#fff;cursor:pointer;text-decoration:none}
+#err{min-height:28px;color:var(--rose);font-size:16px;margin-top:8px}
+.shake{animation:sh .4s}
+@keyframes sh{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;text-align:center}
+#hero h1{font-size:clamp(54px,16vw,96px);line-height:1.3;color:var(--rose)}
+#hero p{color:var(--soft);font-size:20px}
+.heart{display:inline-block;animation:beat 1.4s infinite}
+@keyframes beat{50%{transform:scale(1.18)}}
+h2{font-size:34px;color:var(--gold);margin-bottom:28px}
+.tl{border-right:3px solid var(--line);padding-right:22px}
+.tl article{position:relative;margin-bottom:34px}
+.tl article::before{content:"";position:absolute;right:-31px;top:10px;width:15px;height:15px;border-radius:50%;background:var(--rose)}
+.when{color:var(--gold);font-weight:700;font-size:16px}
+.tl h3{margin:2px 0 6px;font-size:21px}
+.tl p{margin:0;color:var(--soft)}
+.song{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 18px;margin-bottom:14px;color:inherit;text-decoration:none}
+.song .play{flex:none;width:46px;height:46px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-size:18px}
+.song b{display:block;line-height:1.5}
+.song span{color:var(--soft);font-size:16px;line-height:1.6}
+.reasons{display:grid;gap:12px}
+.reasons button{font:inherit;text-align:start;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:16px 18px;cursor:pointer;min-height:64px}
+.reasons button .a{display:none;color:var(--soft);margin-top:6px}
+.reasons button[aria-expanded=true] .a{display:block}
+.reasons button[aria-expanded=true]{border-color:var(--rose)}
+#letter{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 24px;min-height:200px;white-space:pre-wrap;font-size:19px;line-height:2.1}
+#end{text-align:center}
+#end h2{font-size:46px;color:var(--rose)}
+.skip{font:inherit;background:none;border:0;color:var(--soft);text-decoration:underline;cursor:pointer;margin-top:10px}
+textarea{font:inherit;width:100%;padding:14px;border-radius:18px;border:2px solid var(--line);background:var(--card);color:var(--ink);resize:vertical}
+textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#mus{position:fixed;left:16px;bottom:16px;z-index:10;width:48px;height:48px;border-radius:50%;border:0;background:var(--rose);color:#fff;font-size:22px;cursor:pointer}
+#mus[hidden]{display:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="gate">
+  <h1>لحبيبتي ♥</h1>
+  <p>فيه مفاجأة مستنياكي. عشان تفتحيها جاوبي: أول مرة اتكلمنا كانت إمتى؟</p>
+  <input id="ans" inputmode="numeric" placeholder="يوم/شهر/سنة" aria-label="تاريخ أول كلام بينا" autocomplete="off">
+  <div id="err" role="status"></div>
+  <button class="btn" id="go">افتحي</button>
+  <div style="color:var(--soft);font-size:15px;margin-top:12px">🎧 فيه موسيقى هادية، فالسماعات أحلى</div>
+</div>
+
+<main>
+<section id="hero">
+  <h1>كل سنة وإنتي طيبة<br>يا سكرتي <span class="heart">♥</span></h1>
+  <p>عملتلك المكان ده مخصوص، وفيه حاجات من قلبي. انزلي واقري براحتك.</p>
+</section>
+
+<section>
+  <h2>حكايتنا</h2>
+  <div class="tl">
+    <article><div class="when">٩/٤/٢٠٢٥</div><h3>أول مرة اتكلمنا</h3><p>اليوم ده كان عادي لحد ما بقى أحلى يوم في السنة. ما كنتش أعرف إن كلمتين هيبقوا بداية كل حاجة حلوة.</p></article>
+    <article><div class="when">يوليو ٢٠٢٥</div><h3>يوم نتيجة الثانوية</h3><p>إنتي كنتي جنبي. اديتيني دافع إني أكمل، وأقنعتيني إن الدنيا لسه ما خلصتش وإن فيه فرص كتير مستنياني. من يومها وأنا عارف إن وجودك في حياتي قوة مش بس حب.</p></article>
+    <article><div class="when">اللحظة اللي فوقت فيها</div><h3>لما فكرت إنك تبعدي</h3><p>فكرت في الفكرة دي مرة، وساعتها حسيت قد إيه ده هيبقى أكبر خسارة في حياتي. فوقت، ومن يومها مش هسيبك أبداً.</p></article>
+  </div>
+</section>
+
+<section>
+  <h2>أغانينا</h2>
+  <a class="song" href="https://www.youtube.com/results?search_query=%D8%B9%D9%85%D8%B1%D9%88+%D8%AF%D9%8A%D8%A7%D8%A8+%D8%AD%D8%A8%D9%8A%D8%A8%D9%8A+%D8%B9%D8%A7%D8%B1%D9%81+%D8%A8%D8%AA%D8%B9%D9%85%D9%84+%D9%81%D9%8A%D8%A7+%D8%A5%D9%8A%D9%87" target="_blank" rel="noopener"><div class="play">▶</div><div><b>عمرو دياب، حبيبي</b><span>عارفة بتعملي إيه؟ أنا لسه بسأل نفسي السؤال ده كل يوم.</span></div></a>
+  <a class="song" href="https://www.youtube.com/results?search_query=%D8%B9%D9%85%D8%B1%D9%88+%D8%AF%D9%8A%D8%A7%D8%A8+%D8%AA%D9%85%D9%84%D9%8A+%D9%85%D8%B9%D8%A7%D9%83" target="_blank" rel="noopener"><div class="play">▶</div><div><b>عمرو دياب، تملّي معاك</b><span>لأن مهما حصل، أنا معاكي ومتمسك بيكي لآخر لحظة.</span></div></a>
+  <a class="song" href="https://www.youtube.com/results?search_query=%D8%AA%D8%A7%D9%85%D8%B1+%D8%AD%D8%B3%D9%86%D9%8A+%D8%B9%D9%8A%D8%B4%D8%A7%D9%84%D9%83" target="_blank" rel="noopener"><div class="play">▶</div><div><b>تامر حسني، عيشالك</b><span>لأن أيامي بقت ليكي، وكل خطوة بخطيها فيها حتة منك.</span></div></a>
+</section>
+
+<section>
+  <h2>ليه بحبك</h2>
+  <div class="reasons" id="reasons">
+    <button aria-expanded="false">كنتي جنبي لما محتاجك<div class="a">يوم النتيجة وغيره، دايماً لقيتك في ضهري من غير ما أطلب.</div></button>
+    <button aria-expanded="false">بتشوفي فيا حاجة أنا مش شايفها<div class="a">قلتيلي إن الدنيا لسه فيها فرص، وصدقتك فعلاً.</div></button>
+    <button aria-expanded="false">بتخليني أكمل<div class="a">أي وقت كنت هقف، كلامك كان بيرجعني أمشي.</div></button>
+    <button aria-expanded="false">عشان خسارتك مش ممكن أتحملها<div class="a">لما فكرت أبعد، فهمت إنك أغلى حاجة عندي.</div></button>
+    <button aria-expanded="false">عشان إنتي سكرتي<div class="a">حلاوتك مش في شكلك بس، في قلبك وكلامك وطريقتك معايا.</div></button>
+    <button aria-expanded="false">عشان إنتي قلبي وعمري<div class="a">أي حاجة حلوة في أيامي، إنتي السبب فيها.</div></button>
+  </div>
+</section>
+
+<section>
+  <h2>رسالة ليكي</h2>
+  <div id="letter" aria-live="polite"></div>
+  <button class="skip" id="skip">اعرضي الرسالة كاملة</button>
+</section>
+
+<section id="msg" hidden>
+  <h2>ابعتيلي رسالة</h2>
+  <p style="color:var(--soft);margin-top:0">اكتبي أي حاجة في قلبك، وأنا هقراها.</p>
+  <textarea id="mtxt" rows="5" placeholder="اكتبي رسالتك هنا..." aria-label="رسالتك"></textarea>
+  <a class="btn" id="msend" href="#" target="_blank" rel="noopener">ابعتي الرسالة</a>
+</section>
+
+<section id="end">
+  <h2>كل سنة وإنتي عمري ♥</h2>
+  <p>بحبك يا سكرتي، ولسه ماسك بيكي لآخر لحظة.</p>
+</section>
+</main>
+
+<button id="mus" hidden aria-label="تشغيل أو إيقاف الموسيقى">♪</button>
+<script>
+(function(){
+  var MAIL_TO="";
+  var ac,master,on=false,step=0,tm,mus=document.getElementById('mus');
+  var prog=[[220,261.63,329.63],[174.61,220,261.63],[130.81,164.81,196],[196,246.94,293.66]];
+  function note(f,t,d,v){var o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.03);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+.05)}
+  function bar(){var c=prog[step%4],t=ac.currentTime+.05,p=[0,1,2,1,2,1,2,1];note(c[0]/2,t,3.8,.14);p.forEach(function(k,i){note(c[k]*2,t+i*.5,1.8,.07)});step++}
+  function startMusic(){if(ac)return;try{ac=new(window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.55;master.connect(ac.destination);bar();tm=setInterval(bar,4000);on=true;mus.hidden=false}catch(e){}}
+  mus.onclick=function(){if(!ac)return;if(on){clearInterval(tm);ac.suspend();on=false;mus.style.opacity=.5}else{ac.resume();bar();tm=setInterval(bar,4000);on=true;mus.style.opacity=1}};
+  if(MAIL_TO){var ms=document.getElementById('msg'),mt=document.getElementById('mtxt'),mb=document.getElementById('msend');ms.hidden=false;
+    function upd(){mb.href='mailto:'+MAIL_TO+'?subject='+encodeURIComponent('رسالة ليك 💌')+'&body='+encodeURIComponent(mt.value)}
+    mt.addEventListener('input',upd);upd()}
+  var gate=document.getElementById('gate'),ans=document.getElementById('ans'),err=document.getElementById('err');
+  function norm(s){return s.replace(/[\u0660-\u0669]/g,function(d){return d.charCodeAt(0)-1632}).replace(/[^0-9]/g,' ').trim().split(/\s+/).map(function(x){return String(parseInt(x,10))}).join('/')}
+  function tryOpen(){
+    var v=norm(ans.value);
+    if(v==='9/4/2025'){gate.classList.add('off');startMusic();}
+    else{err.textContent='مش دي يا قلبي، فكري تاني 💗';gate.classList.remove('shake');void gate.offsetWidth;ans.classList.add('shake');setTimeout(function(){ans.classList.remove('shake')},450)}
+  }
+  document.getElementById('go').onclick=tryOpen;
+  ans.addEventListener('keydown',function(e){if(e.key==='Enter')tryOpen()});
+
+  document.querySelectorAll('#reasons button').forEach(function(b){
+    b.onclick=function(){b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')==='true'?'false':'true')}
+  });
+
+  var text="يا مروه،\n\nمش عارف أبدأ منين. بس عارف إني من يوم ما اتكلمنا أول مرة وحياتي اتغيرت.\n\nإنتي يا قلبي اللي وقفتي جنبي في أصعب وقت، واللي قلتيلي إن الدنيا لسه ما خلصتش وإن فيه فرص كتير مستنياني. وأنا بجد صدقتك، لأن مفيش حد غيرك كان هيقولها بالطريقة دي.\n\nواللحظة اللي فكرت فيها إنك تبعدي علمتني حاجة عمري ما هنساها: إنك أكبر حاجة ممكن أخسرها. ومن ساعتها وأنا ماسك بيكي، ومش ناوي أسيبك.\n\nكل سنة وإنتي طيبة يا سكرتي، يا قلبي، يا عمري، يا أجمل حاجة حصلتلي.\n\nحبيبك، محمد ♥";
+  var box=document.getElementById('letter'),started=false,i=0,timer;
+  function finish(){clearInterval(timer);box.textContent=text;started=true}
+  function start(){if(started)return;started=true;timer=setInterval(function(){i++;box.textContent=text.slice(0,i);if(i>=text.length)clearInterval(timer)},55)}
+  document.getElementById('skip').onclick=finish;
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    new IntersectionObserver(function(es,o){if(es[0].isIntersecting){start();o.disconnect()}},{threshold:.5}).observe(box);
+  }else{finish()}
+})();
+</script>
+</body>
+</html>
